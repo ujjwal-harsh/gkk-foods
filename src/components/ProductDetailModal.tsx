@@ -33,7 +33,15 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-card product-detail-card" onClick={(e) => e.stopPropagation()}>
         <div className="pdm-image-wrap">
-          <img src={product.imageUrl} alt={product.name} className="pdm-image" />
+          <img
+            src={product.imageUrl}
+            alt={product.name}
+            className="pdm-image"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80';
+            }}
+          />
           <button className="pdm-close-float" onClick={onClose} aria-label="Close product view">
             ✕
           </button>

@@ -167,7 +167,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     categoryId: 'cat-combos',
     description: 'Hearty homestyle meal featuring 2 sabzis (paneer gravy + dry seasonal vegetable), dal fry, 4 phulkas, fragrant pulao, curd, and roasted papad.',
     includes: ['Paneer Gravy', 'Seasonal Dry Sabzi', 'Dal Fry', '4 Whole Wheat Phulkas', 'Pulao Rice', 'Fresh Curd', 'Papad'],
-    imageUrl: 'https://images.unsplash.com/photo-1613292443284-c770c8d19799?w=800&auto=format&fit=crop&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1606471191009-63994c53433b?w=800&auto=format&fit=crop&q=80',
     dietaryTag: 'VEG',
     allergens: ['Wheat (Gluten)', 'Dairy'],
     isDemo: true,

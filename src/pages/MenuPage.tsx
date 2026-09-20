@@ -104,7 +104,16 @@ export const MenuPage: React.FC<MenuPageProps> = ({
               {filteredItems.map(({ product, price, isSoldOut }) => (
                 <div key={product.id} className="fmg-card gkk-card">
                   <div className="fmg-img-wrap" onClick={() => onOpenProduct(product, price, isSoldOut)}>
-                    <img src={product.imageUrl} alt={product.name} className="fmg-img" loading="lazy" />
+                    <img
+                      src={product.imageUrl}
+                      alt={product.name}
+                      className="fmg-img"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80';
+                      }}
+                    />
                     <div className="fmg-badge">
                       <span className="veg-indicator"><span className="veg-indicator-dot" /></span>
                     </div>

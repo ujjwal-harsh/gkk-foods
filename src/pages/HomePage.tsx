@@ -94,6 +94,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                 src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=900&auto=format&fit=crop&q=80"
                 alt="Everyday Indian meal combo with dal, sabzi, roti and rice"
                 className="hero-food-img"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=900&auto=format&fit=crop&q=80';
+                }}
               />
               <div className="hero-img-caption">
                 <div className="hic-left">
@@ -176,7 +180,16 @@ export const HomePage: React.FC<HomePageProps> = ({
               {menuData.items.slice(0, 4).map(({ product, price, isSoldOut }) => (
                 <div key={product.id} className="meal-card gkk-card">
                   <div className="mc-img-wrap" onClick={() => onOpenProduct(product, price, isSoldOut)}>
-                    <img src={product.imageUrl} alt={product.name} className="mc-img" loading="lazy" />
+                    <img
+                      src={product.imageUrl}
+                      alt={product.name}
+                      className="mc-img"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80';
+                      }}
+                    />
                     <div className="mc-dietary-badge">
                       <span className="veg-indicator"><span className="veg-indicator-dot" /></span>
                     </div>

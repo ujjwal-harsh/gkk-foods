@@ -32,7 +32,7 @@ const STORAGE_KEYS = {
   KITCHENS: 'gkk_kitchens_v1',
   ZONES: 'gkk_zones_v1',
   CATEGORIES: 'gkk_categories_v1',
-  PRODUCTS: 'gkk_products_v1',
+  PRODUCTS: 'gkk_products_v2',
   MENUS: 'gkk_menus_v1',
   ORDERS: 'gkk_orders_v1',
   WAITLIST: 'gkk_waitlist_v1',
@@ -95,7 +95,17 @@ class CMSStore {
   }
 
   public getProducts(): Product[] {
-    return load(STORAGE_KEYS.PRODUCTS, INITIAL_PRODUCTS);
+    const products: Product[] = load(STORAGE_KEYS.PRODUCTS, INITIAL_PRODUCTS);
+    // Sanitize any broken legacy image URLs that may exist in user local storage
+    return products.map((p) => {
+      if (!p.imageUrl || p.imageUrl.includes('1613292443284')) {
+        return {
+          ...p,
+          imageUrl: 'https://images.unsplash.com/photo-1606471191009-63994c53433b?w=800&auto=format&fit=crop&q=80'
+        };
+      }
+      return p;
+    });
   }
 
   public getDailyMenus(): DailyMenu[] {
