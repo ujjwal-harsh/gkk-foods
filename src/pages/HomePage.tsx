@@ -91,12 +91,12 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="hero-media-wrapper">
             <div className="hero-img-card gkk-card">
               <img
-                src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=900&auto=format&fit=crop&q=80"
+                src="/dishes/everyday-meal-combo.jpg"
                 alt="Everyday Indian meal combo with dal, sabzi, roti and rice"
                 className="hero-food-img"
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=900&auto=format&fit=crop&q=80';
+                  e.currentTarget.src = '/dishes/everyday-meal-combo.jpg';
                 }}
               />
               <div className="hero-img-caption">
