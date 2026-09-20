@@ -445,3 +445,47 @@ h1, h2, h3, h4 {
   border-left-color: #137333;
   color: #137333;
 }
+
+/* Quick Portal Switcher (Floating pill for operations & demo) */
+.portal-quick-switch {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 850;
+}
+.pqs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.pqs-btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-text-inverse);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+}
+.pqs-btn.active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+@media (max-width: 640px) {
+  .portal-quick-switch {
+    bottom: 16px;
+    right: 16px;
+  }
+  .pqs-btn {
+    padding: 8px 14px;
+    font-size: 0.76rem;
+  }
+}

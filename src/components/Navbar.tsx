@@ -30,14 +30,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   const totalCartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
     { name: 'Menu', path: '/menu' },
-    { name: 'Delhi Hub', path: '/delhi' },
     { name: 'Locations', path: '/locations' },
-    { name: 'About', path: '/about' },
-    { name: 'Quality', path: '/quality' },
-    { name: 'FAQ', path: '/faq' },
-    { name: 'Support', path: '/support' }
+    { name: 'Kitchen Standards', path: '/quality' },
+    { name: 'About GKK', path: '/about' },
+    { name: 'Help & FAQ', path: '/faq' }
   ];
 
   if (flags.corporateOrders) {
@@ -52,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="site-header">
       <div className="container header-inner">
-        {/* Brand Logo */}
+        {/* Brand Logo & Location Indicator */}
         <div className="header-left">
           <button className="brand-logo-btn" onClick={() => handleLinkClick('/')}>
             <span className="brand-badge-mark">GKK</span>
@@ -66,19 +63,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             className={`location-trigger ${serviceability?.isServiceable ? 'loc-active' : ''}`}
             onClick={onOpenServiceability}
-            title="Check delivery serviceability in your area"
+            title="Check delivery serviceability in Delhi"
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+            <svg className="loc-pin-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
             <div className="loc-text">
               <span className="loc-title">
                 {serviceability?.isServiceable
-                  ? `Delivering to ${serviceability.pinCode}`
+                  ? `Delivering: ${serviceability.pinCode}`
                   : 'Check Your Location'}
               </span>
-              <span className="loc-city">Delhi (Live)</span>
+              <span className="loc-city">Delhi (Live Hub)</span>
             </div>
           </button>
         </div>
@@ -115,21 +112,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             className="account-nav-btn"
             onClick={() => handleLinkClick('/account')}
-            title="Customer Account & Orders"
+            title="My Orders & Profile"
+            aria-label="My Orders & Profile"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
               <circle cx="12" cy="7" r="4" />
             </svg>
-          </button>
-
-          {/* Admin Operations Access */}
-          <button
-            className="admin-link-badge"
-            onClick={() => handleLinkClick('/admin')}
-            title="GKK Operations CMS & Dashboard"
-          >
-            Operations
           </button>
 
           {/* Mobile Hamburger Button */}
@@ -155,10 +144,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <span>{serviceability ? `PIN ${serviceability.pinCode} (Delhi)` : 'Select Your Area in Delhi'}</span>
+              <span>{serviceability ? `Delivering to PIN ${serviceability.pinCode}` : 'Check Your Area in Delhi'}</span>
             </button>
 
             <div className="mobile-nav-list">
+              <button
+                className={`mobile-nav-link ${currentPath === '/' ? 'active' : ''}`}
+                onClick={() => handleLinkClick('/')}
+              >
+                Home
+              </button>
               {navLinks.map((link) => (
                 <button
                   key={link.path}
@@ -170,15 +165,21 @@ export const Navbar: React.FC<NavbarProps> = ({
               ))}
               <button
                 className="mobile-nav-link"
+                onClick={() => handleLinkClick('/support')}
+              >
+                Customer Support
+              </button>
+              <button
+                className="mobile-nav-link"
                 onClick={() => handleLinkClick('/account')}
               >
                 My Account & Orders
               </button>
               <button
-                className="mobile-nav-link"
+                className="mobile-nav-link mobile-nav-admin"
                 onClick={() => handleLinkClick('/admin')}
               >
-                ⚙ Operations CMS
+                ⚙ Kitchen CMS & Operations
               </button>
             </div>
           </div>
@@ -190,93 +191,110 @@ export const Navbar: React.FC<NavbarProps> = ({
           position: sticky;
           top: 0;
           z-index: 900;
-          background-color: var(--color-surface);
+          background-color: #FFFFFF;
           border-bottom: 1px solid var(--color-border);
-          box-shadow: 0 1px 4px rgba(33, 29, 26, 0.03);
+          box-shadow: 0 2px 8px rgba(33, 29, 26, 0.04);
         }
         .header-inner {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          height: var(--header-height);
+          height: 72px;
+          gap: 16px;
         }
         .header-left {
           display: flex;
           align-items: center;
-          gap: 20px;
+          gap: 16px;
+          flex-shrink: 0;
         }
         .brand-logo-btn {
-          display: flex;
+          display: inline-flex;
           align-items: center;
           gap: 10px;
           text-align: left;
+          flex-shrink: 0;
+          padding: 4px 0;
         }
         .brand-badge-mark {
           display: flex;
           align-items: center;
           justify-content: center;
           background-color: var(--color-primary);
-          color: #FFF;
+          color: #FFFFFF;
           font-weight: 800;
           font-size: 0.95rem;
           letter-spacing: 0.04em;
-          padding: 6px 9px;
+          padding: 6px 10px;
           border-radius: var(--radius-sm);
+          flex-shrink: 0;
         }
         .brand-text-block {
           display: flex;
           flex-direction: column;
+          white-space: nowrap;
         }
         .brand-name {
           font-size: 1.15rem;
           font-weight: 800;
           letter-spacing: -0.02em;
           color: var(--color-text);
-          line-height: 1.1;
+          line-height: 1.15;
+          white-space: nowrap;
         }
         .brand-subline {
           font-size: 0.72rem;
           color: var(--color-text-muted);
           font-weight: 500;
+          white-space: nowrap;
         }
         .location-trigger {
-          display: flex;
+          display: inline-flex;
           align-items: center;
           gap: 8px;
           padding: 6px 12px;
-          background-color: var(--color-surface-subtle);
+          background-color: #F8F5EE;
           border: 1px solid var(--color-border);
           border-radius: var(--radius-sm);
           color: var(--color-text-secondary);
           transition: all 0.15s ease;
           text-align: left;
+          flex-shrink: 0;
+          white-space: nowrap;
         }
         .location-trigger:hover {
           border-color: var(--color-border-strong);
-          background-color: #EDE5D8;
+          background-color: #EDE4D6;
         }
         .location-trigger.loc-active {
           border-color: var(--color-veg-border);
           background-color: var(--color-veg-light);
           color: var(--color-veg);
         }
+        .loc-pin-icon {
+          flex-shrink: 0;
+        }
         .loc-text {
           display: flex;
           flex-direction: column;
+          white-space: nowrap;
         }
         .loc-title {
-          font-size: 0.78rem;
+          font-size: 0.76rem;
           font-weight: 700;
-          line-height: 1.15;
+          line-height: 1.2;
+          white-space: nowrap;
         }
         .loc-city {
-          font-size: 0.7rem;
+          font-size: 0.68rem;
           color: var(--color-text-muted);
+          white-space: nowrap;
         }
         .desktop-nav {
           display: flex;
           align-items: center;
           gap: 4px;
+          flex-shrink: 1;
         }
         .nav-link {
           padding: 8px 12px;
@@ -285,6 +303,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           color: var(--color-text-secondary);
           border-radius: var(--radius-sm);
           transition: all 0.15s ease;
+          white-space: nowrap;
         }
         .nav-link:hover {
           color: var(--color-primary);
@@ -298,18 +317,21 @@ export const Navbar: React.FC<NavbarProps> = ({
           display: flex;
           align-items: center;
           gap: 12px;
+          flex-shrink: 0;
         }
         .cart-btn {
-          display: flex;
+          display: inline-flex;
           align-items: center;
           gap: 8px;
-          padding: 8px 14px;
+          padding: 8px 16px;
           background-color: var(--color-primary);
-          color: var(--color-text-inverse);
+          color: #FFFFFF;
           border-radius: var(--radius-sm);
           font-size: 0.88rem;
           font-weight: 600;
           transition: background-color 0.15s ease;
+          flex-shrink: 0;
+          white-space: nowrap;
         }
         .cart-btn:hover {
           background-color: var(--color-primary-hover);
@@ -319,11 +341,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           color: var(--color-primary);
           font-size: 0.75rem;
           font-weight: 800;
-          padding: 2px 7px;
+          padding: 1px 7px;
           border-radius: 999px;
+          line-height: 1.4;
         }
         .account-nav-btn {
-          display: flex;
+          display: inline-flex;
           align-items: center;
           justify-content: center;
           width: 38px;
@@ -331,30 +354,21 @@ export const Navbar: React.FC<NavbarProps> = ({
           border-radius: var(--radius-sm);
           color: var(--color-text-secondary);
           border: 1px solid var(--color-border);
+          background-color: #FFFFFF;
+          flex-shrink: 0;
+          transition: all 0.15s ease;
         }
         .account-nav-btn:hover {
           background-color: var(--color-surface-subtle);
           color: var(--color-text);
-        }
-        .admin-link-badge {
-          font-size: 0.72rem;
-          font-weight: 700;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
-          color: var(--color-text-secondary);
-          background-color: var(--color-surface-sunken);
-          padding: 6px 10px;
-          border-radius: var(--radius-sm);
-        }
-        .admin-link-badge:hover {
-          background-color: var(--color-text);
-          color: var(--color-text-inverse);
+          border-color: var(--color-border-strong);
         }
         .mobile-hamburger {
           display: none;
           flex-direction: column;
           gap: 5px;
           padding: 8px;
+          border-radius: var(--radius-sm);
         }
         .burger-line {
           width: 22px;
@@ -365,7 +379,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         .mobile-drawer {
           display: none;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 1080px) {
           .desktop-nav {
             display: none;
           }
@@ -410,7 +424,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             color: var(--color-primary);
             background-color: var(--color-primary-light);
           }
-          .admin-link-badge {
+          .mobile-nav-admin {
+            margin-top: 8px;
+            border-top: 1px solid var(--color-border);
+            padding-top: 14px;
+            color: var(--color-text-muted);
+            font-size: 0.88rem;
+          }
+        }
+        @media (max-width: 640px) {
+          .location-trigger {
             display: none;
           }
         }

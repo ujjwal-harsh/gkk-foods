@@ -3,7 +3,6 @@ import { cmsStore } from './data/cmsStore';
 import { Product, Order } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { ContentAuditBanner } from './components/ContentAuditBanner';
 import { ServiceabilityModal } from './components/ServiceabilityModal';
 import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
@@ -185,10 +184,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="gkk-app-shell">
-      {/* 1. Top Content Governance & Audit Bar */}
-      <ContentAuditBanner />
-
-      {/* 2. Primary Navigation Bar */}
+      {/* 1. Primary Navigation Bar */}
       <Navbar
         currentPath={currentPath}
         onNavigate={navigate}

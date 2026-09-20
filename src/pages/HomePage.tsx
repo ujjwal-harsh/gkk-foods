@@ -59,13 +59,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             {/* CTAs */}
             <div className="hero-actions">
               <button className="btn btn-primary btn-lg" onClick={() => onNavigate('/menu')}>
-                Order Today’s Meal
+                Order Today’s Meal &rarr;
               </button>
-              <button className="btn btn-secondary btn-lg" onClick={() => onNavigate('/menu')}>
-                View Menu
-              </button>
-              <button className="btn btn-outline-primary btn-lg" onClick={onOpenServiceability}>
-                📍 Check Your Area
+              <button className="btn btn-secondary btn-lg" onClick={onOpenServiceability}>
+                📍 Check Delivery Area
               </button>
             </div>
 
