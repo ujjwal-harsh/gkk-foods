@@ -32,7 +32,7 @@ const STORAGE_KEYS = {
   KITCHENS: 'gkk_kitchens_v1',
   ZONES: 'gkk_zones_v1',
   CATEGORIES: 'gkk_categories_v1',
-  PRODUCTS: 'gkk_products_v4',
+  PRODUCTS: 'gkk_products_v5',
   MENUS: 'gkk_menus_v1',
   ORDERS: 'gkk_orders_v1',
   WAITLIST: 'gkk_waitlist_v1',
