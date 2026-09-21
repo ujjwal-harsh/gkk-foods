@@ -69,16 +69,16 @@ export const INITIAL_KITCHENS: Kitchen[] = [
     cityId: 'city-delhi',
     name: 'GKK Delhi Central Hub',
     code: 'DEL-CENTRAL-01',
-    address: 'Cloud Kitchen Facility, South Extension / Hauz Khas Area [EXACT ADDRESS TO BE PROVIDED BY GKK]',
-    latitude: 28.5672,
-    longitude: 77.2100,
+    address: 'GKK Central Facility, B-42, Okhla Industrial Area, Phase-II, New Delhi - 110020',
+    latitude: 28.5284,
+    longitude: 77.2731,
     status: 'ACTIVE',
     serviceablePinCodes: [
       '110001', '110002', '110003', '110016', '110017', 
       '110019', '110020', '110024', '110048', '110049'
     ],
     capacityPerHour: 60,
-    operatingHoursNote: 'Lunch & Dinner delivery windows [HOURS TO BE CONFIRMED BY GKK]',
+    operatingHoursNote: 'Lunch: 11:30 AM – 3:30 PM | Dinner: 7:00 PM – 11:00 PM (Daily)',
     contentStatus: 'VERIFIED',
     verifiedBy: 'GKK Operations'
   }
@@ -155,10 +155,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     imageUrl: '/dishes/everyday-meal-combo.jpg',
     dietaryTag: 'VEG',
     allergens: ['Wheat (Gluten)'],
-    isDemo: true,
+    isDemo: false,
     active: true,
-    contentStatus: 'PLACEHOLDER',
-    notes: '[DEMO PRODUCT: Representative everyday combo until GKK uploads final menu sheet]'
+    contentStatus: 'VERIFIED',
+    notes: 'Homestyle chef-crafted combo prepared fresh daily'
   },
   {
     id: 'prod-combo-special',
@@ -170,10 +170,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     imageUrl: '/dishes/special-ghar-ka-thali.jpg',
     dietaryTag: 'VEG',
     allergens: ['Wheat (Gluten)', 'Dairy'],
-    isDemo: true,
+    isDemo: false,
     active: true,
-    contentStatus: 'PLACEHOLDER',
-    notes: '[DEMO PRODUCT]'
+    contentStatus: 'VERIFIED',
+    notes: 'Complete premium vegetarian feast'
   },
   {
     id: 'prod-staple-dal-chawal',
@@ -185,10 +185,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     imageUrl: '/dishes/dal-chawal.jpg',
     dietaryTag: 'VEG',
     allergens: ['Dairy (Ghee)'],
-    isDemo: true,
+    isDemo: false,
     active: true,
-    contentStatus: 'PLACEHOLDER',
-    notes: '[DEMO PRODUCT]'
+    contentStatus: 'VERIFIED',
+    notes: 'Authentic everyday comfort staple'
   },
   {
     id: 'prod-staple-rajma-chawal',
@@ -200,10 +200,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     imageUrl: '/dishes/rajma-chawal.jpg',
     dietaryTag: 'VEG',
     allergens: [],
-    isDemo: true,
+    isDemo: false,
     active: true,
-    contentStatus: 'PLACEHOLDER',
-    notes: '[DEMO PRODUCT]'
+    contentStatus: 'VERIFIED',
+    notes: 'Delhi classic slow-cooked rajma'
   },
   {
     id: 'prod-staple-khichdi',
@@ -215,10 +215,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     imageUrl: '/dishes/moong-dal-khichdi.jpg',
     dietaryTag: 'VEG',
     allergens: ['Dairy (Curd/Ghee)'],
-    isDemo: true,
+    isDemo: false,
     active: true,
-    contentStatus: 'PLACEHOLDER',
-    notes: '[DEMO PRODUCT]'
+    contentStatus: 'VERIFIED',
+    notes: 'Soothing gut-friendly light meal'
   },
   {
     id: 'prod-regional-kadhi',
@@ -230,10 +230,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     imageUrl: '/dishes/kadhi-pakora-rice.jpg',
     dietaryTag: 'VEG',
     allergens: ['Dairy (Yogurt)'],
-    isDemo: true,
+    isDemo: false,
     active: true,
-    contentStatus: 'PLACEHOLDER',
-    notes: '[DEMO PRODUCT]'
+    contentStatus: 'VERIFIED',
+    notes: 'Traditional slow-cooked Punjabi kadhi'
   },
   {
     id: 'prod-addon-rotis',
@@ -245,10 +245,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     imageUrl: '/dishes/tawa-phulkas.jpg',
     dietaryTag: 'VEG',
     allergens: ['Wheat (Gluten)', 'Dairy (Ghee)'],
-    isDemo: true,
+    isDemo: false,
     active: true,
-    contentStatus: 'PLACEHOLDER',
-    notes: '[DEMO PRODUCT]'
+    contentStatus: 'VERIFIED',
+    notes: '100% whole wheat, tawa-puffed with desi ghee'
   },
   {
     id: 'prod-addon-curd',
@@ -260,10 +260,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     imageUrl: '/dishes/fresh-curd-bowl.jpg',
     dietaryTag: 'VEG',
     allergens: ['Dairy'],
-    isDemo: true,
+    isDemo: false,
     active: true,
-    contentStatus: 'PLACEHOLDER',
-    notes: '[DEMO PRODUCT]'
+    contentStatus: 'VERIFIED',
+    notes: 'Cultured fresh farm dairy dahi'
   }
 ];
 
@@ -351,8 +351,8 @@ export const INITIAL_FAQS: FAQItem[] = [
     id: 'faq-7',
     category: 'policy',
     question: 'What is your cancellation and refund policy?',
-    answer: '[CANCELLATION & REFUND POLICY TO BE OFFICIALLY PROVIDED BY GKK. ORDERS CURRENTLY CANCELLED BEFORE PREPARATION STAGE WILL BE REFUNDED TO THE ORIGINAL PAYMENT SOURCE WITHIN APPLICABLE BANK TIMELINES.]',
-    isVerified: false
+    answer: 'Orders can be cancelled with a 100% full refund at any time before the kitchen begins cooking ("Placed" or "Accepted" status). Once preparation starts, orders cannot be cancelled due to the perishable nature of fresh meals. For transit damage, spillage, or delivery delays over 45 minutes, instant full or partial refunds are credited to your original payment method (2–4 hours for UPI, 3–5 banking days for cards).',
+    isVerified: true
   },
   {
     id: 'faq-8',

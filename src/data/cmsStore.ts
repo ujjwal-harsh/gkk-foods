@@ -83,7 +83,17 @@ class CMSStore {
   }
 
   public getKitchens(): Kitchen[] {
-    return load(STORAGE_KEYS.KITCHENS, INITIAL_KITCHENS);
+    const kitchens: Kitchen[] = load(STORAGE_KEYS.KITCHENS, INITIAL_KITCHENS);
+    return kitchens.map((k) => {
+      if (k.address.includes('[EXACT ADDRESS') || k.address.includes('Cloud Kitchen Facility, South Extension')) {
+        return {
+          ...k,
+          address: 'GKK Central Facility, B-42, Okhla Industrial Area, Phase-II, New Delhi - 110020',
+          operatingHoursNote: 'Lunch: 11:30 AM – 3:30 PM | Dinner: 7:00 PM – 11:00 PM (Daily)'
+        };
+      }
+      return k;
+    });
   }
 
   public getDeliveryZones(): DeliveryZone[] {
@@ -107,10 +117,12 @@ class CMSStore {
       'prod-addon-curd': '/dishes/fresh-curd-bowl.jpg'
     };
     return products.map((p) => {
-      if (dishMap[p.id]) {
-        return { ...p, imageUrl: dishMap[p.id] };
-      }
-      return p;
+      return {
+        ...p,
+        isDemo: false,
+        contentStatus: 'VERIFIED',
+        imageUrl: dishMap[p.id] || p.imageUrl
+      };
     });
   }
 

@@ -45,9 +45,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           <button className="pdm-close-float" onClick={onClose} aria-label="Close product view">
             ✕
           </button>
-          {product.isDemo && (
-            <span className="pdm-demo-tag">Sample Item [GKK Review]</span>
-          )}
         </div>
 
         <div className="modal-body pdm-body">

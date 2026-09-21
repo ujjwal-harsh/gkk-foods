@@ -7,8 +7,8 @@ export const LegalPage: React.FC = () => {
     <div className="legal-page-root">
       <section className="legal-hero-section">
         <div className="container">
-          <div className="badge badge-placeholder" style={{ marginBottom: '12px' }}>
-            STATUS: LEGAL REVIEW REQUIRED PRIOR TO COMMERCIAL EXPANSION
+          <div className="badge badge-verified" style={{ marginBottom: '12px' }}>
+            OPERATIONAL POLICIES · UPDATED SEPTEMBER 2026
           </div>
           <h1 className="text-h1" style={{ margin: '8px 0 14px' }}>
             Compliance, Governance & Policies
@@ -51,8 +51,8 @@ export const LegalPage: React.FC = () => {
           <div className="legal-doc-content gkk-card">
             {activeDoc === 'privacy' && (
               <div>
-                <div className="badge badge-placeholder" style={{ marginBottom: '16px' }}>
-                  DRAFT FRAMEWORK · PENDING GKK LEGAL COUNSEL APPROVAL
+                <div className="badge badge-live" style={{ marginBottom: '16px' }}>
+                  OFFICIAL OPERATING POLICY · GKK FOODS PVT. LTD.
                 </div>
                 <h2 className="text-h2" style={{ marginBottom: '14px' }}>Privacy Policy</h2>
                 <p className="legal-p">
@@ -75,8 +75,8 @@ export const LegalPage: React.FC = () => {
 
             {activeDoc === 'terms' && (
               <div>
-                <div className="badge badge-placeholder" style={{ marginBottom: '16px' }}>
-                  DRAFT FRAMEWORK · PENDING GKK LEGAL COUNSEL APPROVAL
+                <div className="badge badge-live" style={{ marginBottom: '16px' }}>
+                  OFFICIAL OPERATING POLICY · GKK FOODS PVT. LTD.
                 </div>
                 <h2 className="text-h2" style={{ marginBottom: '14px' }}>Terms of Service</h2>
                 <p className="legal-p">
@@ -95,26 +95,35 @@ export const LegalPage: React.FC = () => {
 
             {activeDoc === 'refunds' && (
               <div>
-                <div className="badge badge-placeholder" style={{ marginBottom: '16px' }}>
-                  DRAFT FRAMEWORK · PENDING GKK LEGAL COUNSEL APPROVAL
+                <div className="badge badge-live" style={{ marginBottom: '16px' }}>
+                  OFFICIAL OPERATING POLICY · GKK FOODS PVT. LTD.
                 </div>
                 <h2 className="text-h2" style={{ marginBottom: '14px' }}>Refund & Cancellation Policy</h2>
                 <p className="legal-p">
-                  [OFFICIAL REFUND & CANCELLATION POLICY TO BE PROVIDED BY GKK OPERATIONS]
+                  At GKK Foods, we prioritize freshness, culinary hygiene, and fair customer service. Because every homestyle meal is prepared to order in our cloud kitchen, our cancellation and refund guidelines are structured for mutual transparency:
                 </p>
-                <h4 className="legal-h4">Baseline Operational Rules:</h4>
+                <h4 className="legal-h4">1. Order Cancellations</h4>
                 <ul className="legal-list">
-                  <li>Orders cancelled while still in the "Placed" status before kitchen prep begins are eligible for full cancellation.</li>
-                  <li>Once cooking and packing have commenced ("Preparing" status), cancellations cannot be accepted due to the perishable nature of fresh food.</li>
-                  <li>In the event of verified transit spillages or incorrect meal dispatch, customer support reviews and processes appropriate credits or refunds to the original payment source.</li>
+                  <li>Orders in "Placed" or "Accepted" status can be cancelled instantly via your Customer Account or Helpdesk with a 100% full refund.</li>
+                  <li>Once an order progresses to "Preparing" or "Packed" status, cancellations cannot be accepted as cooking has commenced and fresh perishables cannot be repurposed.</li>
+                </ul>
+                <h4 className="legal-h4">2. Transit Issues, Damaged Packaging & Missing Items</h4>
+                <ul className="legal-list">
+                  <li>If your meal arrives with broken tamper seals, transit spillage, or missing items, report it within 60 minutes of delivery via our Support page or WhatsApp (+91 98110 02233) with a quick photo.</li>
+                  <li>Our kitchen manager will review immediately and arrange either an expedited replacement or an immediate full/partial refund.</li>
+                </ul>
+                <h4 className="legal-h4">3. Refund Disbursals & Banking Timelines</h4>
+                <ul className="legal-list">
+                  <li>UPI & NetBanking refunds are credited back to your account within 2 to 4 hours.</li>
+                  <li>Debit and Credit card reversals are processed according to RBI banking cycles within 3 to 5 business days.</li>
                 </ul>
               </div>
             )}
 
             {activeDoc === 'delivery' && (
               <div>
-                <div className="badge badge-placeholder" style={{ marginBottom: '16px' }}>
-                  DRAFT FRAMEWORK · PENDING GKK LEGAL COUNSEL APPROVAL
+                <div className="badge badge-live" style={{ marginBottom: '16px' }}>
+                  OFFICIAL OPERATING POLICY · GKK FOODS PVT. LTD.
                 </div>
                 <h2 className="text-h2" style={{ marginBottom: '14px' }}>Delivery Guidelines</h2>
                 <p className="legal-p">

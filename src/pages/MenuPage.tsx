@@ -117,9 +117,6 @@ export const MenuPage: React.FC<MenuPageProps> = ({
                     <div className="fmg-badge">
                       <span className="veg-indicator"><span className="veg-indicator-dot" /></span>
                     </div>
-                    {product.isDemo && (
-                      <span className="badge badge-placeholder fmg-demo">Sample Dish</span>
-                    )}
                     {isSoldOut && (
                       <div className="mc-soldout-overlay">Sold Out Today</div>
                     )}

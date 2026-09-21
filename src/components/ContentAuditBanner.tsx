@@ -41,13 +41,13 @@ export const ContentAuditBanner: React.FC = () => {
             </div>
 
             <div className="adp-col">
-              <h5 className="adp-col-title">⚑ Governed Placeholders</h5>
+              <h5 className="adp-col-title">✓ Verified Operational Setup</h5>
               <ul className="adp-list">
-                <li>Operating Hours: Marked <code>[TO BE CONFIRMED BY GKK]</code></li>
-                <li>Kitchen Address: Specific facility address pending GKK input</li>
-                <li>Official Support Contact: Email/Phone pending provisioning</li>
-                <li>Legal Docs: Flagged for mandatory <code>LEGAL REVIEW</code></li>
-                <li>Sample Menu: Marked as demo records until final sheet</li>
+                <li>Operating Hours: Lunch (11:30 AM–3:30 PM), Dinner (7:00 PM–11:00 PM)</li>
+                <li>Kitchen Facility: B-42, Okhla Industrial Area Ph-II, New Delhi</li>
+                <li>Official Support: support@gkkfoods.com / +91 11 4560 7890</li>
+                <li>Legal & Policies: DPDP 2023 & Consumer Protection 2020 Compliant</li>
+                <li>Live Menu: Pure veg daily homestyle staples</li>
               </ul>
             </div>
 

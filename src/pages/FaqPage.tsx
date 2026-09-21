@@ -70,11 +70,6 @@ export const FaqPage: React.FC = () => {
                   {isOpen && (
                     <div className="faq-acc-content">
                       <p className="faq-ans-text">{faq.answer}</p>
-                      {!faq.isVerified && (
-                        <div className="badge badge-placeholder" style={{ marginTop: '10px' }}>
-                          Notice: Exact commercial terms pending GKK legal filing
-                        </div>
-                      )}
                     </div>
                   )}
                 </div>

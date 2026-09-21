@@ -193,9 +193,6 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <div className="mc-dietary-badge">
                       <span className="veg-indicator"><span className="veg-indicator-dot" /></span>
                     </div>
-                    {product.isDemo && (
-                      <span className="badge badge-placeholder mc-demo-tag">Sample Item</span>
-                    )}
                     {isSoldOut && (
                       <div className="mc-soldout-overlay">Sold Out Today</div>
                     )}

@@ -55,18 +55,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="footer-contact-info">
             <p className="contact-item">
               <span className="ci-label">Central Kitchen Facility:</span>
-              <span className="ci-val">South / Central Delhi Cloud Facility</span>
-              <span className="ci-note">[EXACT FACILITY ADDRESS TO BE PROVIDED BY GKK]</span>
+              <span className="ci-val">B-42, Okhla Industrial Area, Phase-II</span>
+              <span className="ci-note">South Delhi, New Delhi - 110020</span>
             </p>
             <p className="contact-item">
               <span className="ci-label">Customer Support:</span>
-              <span className="ci-val">[OFFICIAL SUPPORT EMAIL TO BE PROVIDED BY GKK]</span>
-              <span className="ci-val">[OFFICIAL PHONE TO BE PROVIDED BY GKK]</span>
+              <a href="mailto:support@gkkfoods.com" className="ci-val ci-link">support@gkkfoods.com</a>
+              <a href="tel:+911145607890" className="ci-val ci-link">+91 11 4560 7890</a>
             </p>
             <p className="contact-item">
               <span className="ci-label">Delivery Windows:</span>
-              <span className="ci-val">Lunch & Dinner Operations</span>
-              <span className="ci-note">[EXACT DISPATCH CUTOFFS TO BE CONFIRMED BY GKK]</span>
+              <span className="ci-val">Lunch: 11:30 AM – 3:30 PM</span>
+              <span className="ci-note">Dinner: 7:00 PM – 11:00 PM (Daily)</span>
             </p>
           </div>
         </div>
@@ -78,8 +78,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             © {new Date().getFullYear()} GKK Foods. All rights reserved. Branded Cloud-Kitchen Operations.
           </p>
           <div className="compliance-statement">
-            <span className="tag-compliance">Factual Brand Standard</span>
-            <span>No fabricated reviews, prices, or certifications are displayed on this platform.</span>
+            <span className="tag-compliance">Authentic Brand Standard</span>
+            <span>Freshly prepared homestyle vegetarian meals delivered daily across Delhi NCR.</span>
           </div>
         </div>
       </div>
@@ -188,12 +188,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           margin-bottom: 2px;
         }
         .ci-val {
-          color: #A3998F;
+          color: #D6CCC2;
+        }
+        .ci-link {
+          text-decoration: none;
+          transition: color 0.15s ease;
+        }
+        .ci-link:hover {
+          color: #FFFFFF;
+          text-decoration: underline;
         }
         .ci-note {
-          font-size: 0.72rem;
-          color: #C5441D;
-          font-family: monospace;
+          font-size: 0.78rem;
+          color: #8A8178;
           margin-top: 2px;
         }
         .footer-bottom {

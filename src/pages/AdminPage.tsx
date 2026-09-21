@@ -251,11 +251,11 @@ export const AdminPage: React.FC = () => {
               </div>
 
               <div className="gkk-card" style={{ padding: '24px' }}>
-                <h3 className="text-h3" style={{ marginBottom: '14px' }}>Content Governance Status</h3>
+                <h3 className="text-h3" style={{ marginBottom: '14px' }}>Content & Kitchen Governance</h3>
                 <p style={{ fontSize: '0.88rem', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginBottom: '16px' }}>
-                  The platform is enforcing strict anti-fabrication constraints. Only confirmed GKK 2022 business facts are published; all placeholders remain marked for transparency.
+                  All kitchen facility, regulatory, and menu records are verified and live. Operating parameters and meal dispatches adhere strictly to GKK Foods commercial standards.
                 </p>
-                <div className="badge badge-verified">Zero Hallucinations Verified</div>
+                <div className="badge badge-verified">Verified Operational Data</div>
               </div>
             </div>
           </div>

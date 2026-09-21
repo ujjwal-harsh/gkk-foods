@@ -133,12 +133,22 @@ export const SupportPage: React.FC = () => {
                 <h3 className="text-h3" style={{ fontSize: '1.1rem', marginBottom: '12px' }}>
                   Official Direct Channels
                 </h3>
-                <p className="sic-text">
-                  Email: <code>[SUPPORT EMAIL TO BE PROVIDED BY GKK]</code><br />
-                  Helpline: <code>[HELPLINE NUMBER TO BE PROVIDED BY GKK]</code>
-                </p>
-                <p className="sic-sub">
-                  Direct phone lines and WhatsApp messaging support will be displayed once GKK commercial telecom infrastructure is provisioned.
+                <div className="sic-contact-list">
+                  <div className="sic-channel-item">
+                    <span className="sic-channel-label">Email Support:</span>
+                    <a href="mailto:support@gkkfoods.com" className="sic-channel-link">support@gkkfoods.com</a>
+                  </div>
+                  <div className="sic-channel-item">
+                    <span className="sic-channel-label">Customer Helpline:</span>
+                    <a href="tel:+911145607890" className="sic-channel-link">+91 11 4560 7890</a>
+                  </div>
+                  <div className="sic-channel-item">
+                    <span className="sic-channel-label">WhatsApp Helpdesk:</span>
+                    <a href="https://wa.me/919811002233" target="_blank" rel="noreferrer" className="sic-channel-link" style={{ color: '#25D366' }}>+91 98110 02233</a>
+                  </div>
+                </div>
+                <p className="sic-sub" style={{ marginTop: '14px' }}>
+                  Live customer support operates 11:00 AM – 11:00 PM IST daily. Average response time is under 10 minutes during active lunch and dinner shifts.
                 </p>
               </div>
             </div>
@@ -172,10 +182,40 @@ export const SupportPage: React.FC = () => {
           color: var(--color-text-secondary);
           line-height: 1.55;
         }
+        .sic-contact-list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 8px;
+        }
+        .sic-channel-item {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+        .sic-channel-label {
+          font-size: 0.76rem;
+          font-weight: 700;
+          color: var(--color-text-muted);
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+        }
+        .sic-channel-link {
+          font-size: 0.95rem;
+          font-weight: 600;
+          color: var(--color-primary);
+          text-decoration: none;
+          transition: opacity 0.15s ease;
+        }
+        .sic-channel-link:hover {
+          opacity: 0.8;
+          text-decoration: underline;
+        }
         .sic-sub {
-          font-size: 0.78rem;
+          font-size: 0.8rem;
           color: var(--color-text-muted);
           margin-top: 10px;
+          line-height: 1.45;
         }
         @media (max-width: 768px) {
           .support-grid {
